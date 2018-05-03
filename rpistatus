@@ -1,0 +1,11 @@
+#!/bin/bash
+
+$ echo begin ping
+
+check=ping -c 1 rpi12
+
+if [ "$check"= 0 ] 
+then print alive
+fi
+
+
