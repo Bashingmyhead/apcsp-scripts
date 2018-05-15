@@ -1,11 +1,17 @@
 #!/bin/bash
 
-$ echo begin ping
+echo begin ping
 
-check=ping -c 1 rpi12
+for device in rpi01 rpi02 rpi03 rpi04 rpi05 rpi06 rpi07 rpi08 rpi09 rpi10 rpi11 rpi12 rpi13 rpi14 rpi15 rpi16 rpi17 rpi18 rpimpw
 
-if [ "$check"= 0 ] 
-then print alive
+do  
+ping -c 1 $device > /dev/null 2>&1
+
+if [ $? == 0 ]; 
+then echo $device:alive
+else echo $device:dead
 fi
 
+done 
 
+echo done
